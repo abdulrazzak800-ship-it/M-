@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pour mon cœur ❤️</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ffe5ef,#ffc5da,#fff0f5);
+}
+
+.card {
+    width: 100%;
+    max-width: 440px;
+    padding: 35px 20px;
+    border-radius: 30px;
+    background: #ffffffd9;
+    box-shadow: 0 10px 35px #e78aaa55;
+    position: relative;
+    z-index: 2;
+}
+
+.cat {
+    font-size: 80px;
+    animation: bounce 2s infinite;
+}
+
+h1 { color: #c52e67; font-size: 27px; }
+p { color: #9d3d64; font-size: 17px; }
+
+button {
+    border: none;
+    border-radius: 16px;
+    padding: 14px 25px;
+    margin: 10px 5px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.yes { background: #62c995; }
+.no { background: #f05270; }
+.music { background: #c83d83; font-size: 15px; }
+
+.hidden { display: none; }
+
+#loveMessage {
+    color: #c52e67;
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 1.6;
+    animation: appear 1s;
+}
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    pointer-events: none;
+    animation: float 4s linear forwards;
+    z-index: 1;
+}
+
+#no { position: relative; }
+
+@keyframes bounce {
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: scale(.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="cat">🐱💕</div>
+
+<section id="welcome">
+    <h1>J’ai une petite surprise pour toi… 💗</h1>
+    <p>Tu veux découvrir ? 🥺</p>
+    <button class="yes" onclick="showQuestion()">
+        Oui 💕
+    </button>
+</section>
+
+<section id="question" class="hidden">
+    <h1>Est-ce que tu m’aimes ? ❤️</h1>
+    <p>Réponds sincèrement… 🥺</p>
+
+    <button class="yes" onclick="sayYes()">Oui 💗</button>
+
+    <button class="no" id="no"
+    onmouseenter="runAway()" onclick="runAway()">
+        Non 💔
+    </button>
+</section>
+
+<section id="answer" class="hidden">
+
+    <div id="loveMessage">
+        Je t’aime aussi mon cœur,
+        bichon nouilles 🥺🥺❤️
+    </div>
+
+    <p>Un milliard de bisous rien que pour toi ! 💋</p>
+
+    <button class="yes" onclick="moreHearts()">
+        Encore des cœurs 💖
+    </button>
+
+</section>
+
+<br>
+
+<button class="music" onclick="document.getElementById('musicFile').click()">
+    🎵 Choisir ma musique
+</button>
+
+<input type="file" id="musicFile" accept="audio/*"
+style="display:none" onchange="loadMusic(event)">
+
+<br>
+
+<button class="music hidden" id="playButton" onclick="toggleMusic()">
+    ▶️ Écouter la musique
+</button>
+
+<audio controls>
+
+<source
+     src=‘’
+
+ ‘’
+
+<audio/mpeg>
+
+function showQuestion() {
+    document.getElementById("welcome").classList.add("hidden");
+    document.getElementById("question").classList.remove("hidden");
+    createHearts(10);
+}
+
+function sayYes() {
+    document.getElementById("question").classList.add("hidden");
+    document.getElementById("answer").classList.remove("hidden");
+    createHearts(50);
+}
+
+function runAway() {
+    const btn = document.getElementById("no");
+
+    btn.style.position = "fixed";
+
+    const maxX = window.innerWidth - btn.offsetWidth - 20;
+    const maxY = window.innerHeight - btn.offsetHeight - 20;
+
+    btn.style.left = Math.max(10,Math.random()*maxX) + "px";
+    btn.style.top = Math.max(10,Math.random()*maxY) + "px";
+}
+
+function createHearts(amount) {
+    const symbols = ["❤️","💕","💗","💖","🌸","💘"];
+
+    for(let i=0; i<amount; i++) {
+        setTimeout(() => {
+            const heart = document.createElement("span");
+
+            heart.className = "heart";
+            heart.textContent =
+                symbols[Math.floor(Math.random()*symbols.length)];
+
+            heart.style.left = Math.random()*100 + "vw";
+            heart.style.fontSize = (20+Math.random()*25)+"px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(),4000);
+        },i*70);
+    }
+}
+
+function moreHearts() {
+    createHearts(40);
+}
+
+let musicURL = null;
+
+function loadMusic(event) {
+    const file = event.target.files[0];
+
+    if(!file) return;
+
+    const song = document.getElementById("song");
+
+    if(musicURL) URL.revokeObjectURL(musicURL);
+
+    musicURL = URL.createObjectURL(file);
+    song.src = musicURL;
+
+    document.getElementById("playButton").classList.remove("hidden");
+
+    song.play().then(() => {
+        document.getElementById("playButton").textContent =
+            "⏸️ Mettre en pause";
+    }).catch(() => {
+        document.getElementById("playButton").textContent =
+            "▶️ Écouter la musique";
+    });
+}
+
+async function toggleMusic() {
+    const song = document.getElementById("song");
+    const btn = document.getElementById("playButton");
+
+    if(!song.src) return;
+
+    if(song.paused) {
+        await song.play();
+        btn.textContent = "⏸️ Mettre en pause";
+    } else {
+        song.pause();
+        btn.textContent = "▶️ Écouter la musique";
+    }
+}
+
+</script>
+
+</body>
+</html>
