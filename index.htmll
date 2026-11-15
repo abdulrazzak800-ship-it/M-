@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Amour ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #ffd1dc, #fff0f5);
+    color: #9b2450;
+    text-align: center;
+}
+
+.container {
+    padding: 30px 15px;
+}
+
+h1 {
+    font-size: 38px;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.gallery img {
+    width: 150px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 4px solid white;
+    box-shadow: 0 5px 15px #d889a5;
+}
+
+.heart {
+    font-size: 35px;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.3); }
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 22px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="heart">❤️</div>
+
+<h1>Mon Amour ❤️</h1>
+
+<p>
+Depuis que tu es entré(e) dans ma vie,<br>
+tout est devenu plus beau.<br>
+Tu es mon bonheur, mon sourire<br>
+et ma plus belle histoire d'amour.
+</p>
+
+<h2>Nos plus beaux souvenirs 📸</h2>
+
+<div class="gallery">
+    <img src="
+
+">
+    <img src="">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+</div>
+
+<p>
+Je ne veux pas une vie parfaite,<br>
+je veux simplement la vivre avec toi. ❤️
+</p>
+
+<h2>Je t'aime plus que tout 💋</h2>
+
+<footer>
+À toi, pour toujours... ♾️
+</footer>
+
+</div>
+</body>
+</html>
