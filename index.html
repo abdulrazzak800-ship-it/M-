@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Amour ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #ffb6c9, #ffe4ec, #ff8fab);
+    font-family: 'Georgia', serif;
+    text-align: center;
+    overflow-x: hidden;
+    color: #9b174c;
+}
+
+.container {
+    padding: 40px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 42px;
+    animation: pulse 2s infinite;
+}
+
+p {
+    font-size: 20px;
+    margin: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px;
+}
+
+.gallery img {
+    width: 150px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 4px solid white;
+    box-shadow: 0 5px 20px #d63384;
+    transition: 0.5s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+button {
+    background: #e91e63;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #ad1457;
+}
+
+#message {
+    display: none;
+    font-size: 24px;
+    margin-top: 25px;
+    animation: pulse 2s infinite;
+}
+
+.heart {
+    position: fixed;
+    top: -10px;
+    color: red;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>❤️ Mon Amour ❤️</h1>
+
+<p>
+Depuis que tu es dans ma vie,<br>
+chaque instant est devenu magique.
+</p>
+
+<div class="gallery">
+    <img src="photo1.jpg" alt="Notre souvenir">
+    <img src="photo2.jpg" alt="Notre bonheur">
+    <img src="photo3.jpg" alt="Notre amour">
+</div>
+
+<h2>💕 Une histoire écrite avec le cœur 💕</h2>
+
+<p>
+Tu es mon sourire préféré,<br>
+mon plus beau rêve et mon bonheur.
+</p>
+
+<button onclick="showLove()">
+Clique ici mon cœur ❤️
+</button>
+
+<div id="message">
+Je t'aime plus que les mots ne peuvent le dire ! 💋
+<br>
+Tu es mon aujourd'hui et tous mes lendemains. 🌹
+</div>
+
+</div>
+
+<script>
+function showLove() {
+    document.getElementById("message").style.display = "block";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
