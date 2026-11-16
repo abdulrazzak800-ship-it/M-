@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHAYB - ملك اللعبة</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&family=Cairo:wght@900&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at center, #541000, #130000 55%, #000);
+  color: white;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(0deg, #ff220044, transparent 60%);
+  animation: fire 1.5s infinite alternate;
+}
+
+@keyframes fire {
+  from { opacity: .3; }
+  to { opacity: 1; }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px 20px;
+  width: 90%;
+  max-width: 600px;
+  border: 2px solid #ff3c00;
+  border-radius: 25px;
+  background: #090000bb;
+  box-shadow: 0 0 30px red, inset 0 0 30px #8b1600;
+  animation: entrance 1.5s ease;
+}
+
+@keyframes entrance {
+  from { transform: scale(.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.crown {
+  font-size: 65px;
+  animation: crown 2s infinite ease-in-out;
+  filter: drop-shadow(0 0 15px orange);
+}
+
+@keyframes crown {
+  0%,100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+h1 {
+  font-family: Orbitron, sans-serif;
+  font-size: clamp(45px, 13vw, 85px);
+  color: #fff;
+  text-shadow: 0 0 10px red, 0 0 30px #ff4500, 0 0 60px red;
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  from { text-shadow: 0 0 10px red; }
+  to { text-shadow: 0 0 40px #ff7700, 0 0 80px red; }
+}
+
+.arabic {
+  font-family: Cairo, sans-serif;
+  font-size: 45px;
+  color: #ffb000;
+  text-shadow: 0 0 20px red;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { opacity: .7; }
+  to { opacity: 1; }
+}
+
+.king {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  border: 2px solid gold;
+  border-radius: 10px;
+  color: gold;
+  font-family: Cairo, sans-serif;
+  font-size: 25px;
+  box-shadow: 0 0 20px orange;
+  animation: king 2s infinite alternate;
+}
+
+@keyframes king {
+  from { box-shadow: 0 0 5px orange; }
+  to { box-shadow: 0 0 30px gold; }
+}
+
+.quote {
+  margin-top: 25px;
+  line-height: 2;
+  color: #ddd;
+  font-family: Cairo, sans-serif;
+}
+
+.quote span {
+  color: #ff3c00;
+}
+
+/* شرارات متحركة */
+.spark {
+  position: absolute;
+  bottom: -20px;
+  width: 5px;
+  height: 5px;
+  background: orange;
+  border-radius: 50%;
+  box-shadow: 0 0 15px red, 0 0 25px orange;
+  animation: rise linear infinite;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(80px);
+    opacity: 0;
+  }
+}
+
+.lightning {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  color: red;
+  font-size: 60px;
+  animation: flash 2s infinite;
+}
+
+@keyframes flash {
+  0%,90%,100% { opacity: 0; }
+  92% { opacity: 1; text-shadow: 0 0 40px red; }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="lightning">ϟ</div>
+
+<div class="container">
+  <div class="crown">👑</div>
+
+  <p style="color:orange;letter-spacing:5px">
+    FREE FIRE LEGEND
+  </p>
+
+  <h1>SHAYB</h1>
+
+  <div class="arabic">شايب</div>
+
+  <div class="king">🔥 ملك اللعبة 🔥</div>
+
+  <div class="quote">
+    أنا لا أنافس أحداً...<br>
+    <span>أنا الهيبة والباقي مجرد أسماء!</span>
+    <br>
+    NO FEAR • NO MERCY • JUST VICTORY
+  </div>
+</div>
+
+<script>
+for (let i = 0; i < 60; i++) {
+  let spark = document.createElement("div");
+  spark.className = "spark";
+
+  spark.style.left = Math.random() * 100 + "vw";
+  spark.style.animationDuration = (2 + Math.random() * 5) + "s";
+  spark.style.animationDelay = Math.random() * 5 + "s";
+  spark.style.transform = `scale(${Math.random() * 2})`;
+
+  document.body.appendChild(spark);
+}
+</script>
+
+</body>
+</html>
