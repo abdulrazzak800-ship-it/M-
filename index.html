@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHAYB ❤️ AWTAR</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background:
+    radial-gradient(ellipse at 50% 40%, #741026 0%, #30000d 45%, #080005 100%);
+}
+
+/* خلفية نارية كاملة */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at bottom, #ff350044, transparent 60%),
+    linear-gradient(120deg, #ff004411, transparent, #ff650022);
+  animation: bg 3s infinite alternate;
+}
+
+@keyframes bg {
+  to { opacity: .4; }
+}
+
+/* المحتوى بدون أي إطار */
+.content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 20px;
+  animation: appear 2s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rose {
+  font-size: 35px;
+  animation: rose 2s infinite;
+}
+
+@keyframes rose {
+  50% { transform: scale(1.2); }
+}
+
+.intro {
+  color: #ffc1d9;
+  font-family: Cairo;
+  font-size: 17px;
+  text-shadow: 0 0 15px pink;
+  margin: 10px;
+}
+
+.crown {
+  font-size: 55px;
+  filter: drop-shadow(0 0 20px gold);
+  animation: crown 2s infinite;
+}
+
+@keyframes crown {
+  50% { transform: translateY(-12px) rotate(5deg); }
+}
+
+h1 {
+  font-family: Orbitron;
+  font-size: clamp(55px, 15vw, 100px);
+  color: white;
+  text-shadow: 0 0 15px red, 0 0 40px #ff4500, 0 0 70px red;
+  animation: fire 1.5s infinite alternate;
+}
+
+@keyframes fire {
+  to { text-shadow: 0 0 30px orange, 0 0 80px red; }
+}
+
+.arabic {
+  font-family: Cairo;
+  font-size: 43px;
+  color: gold;
+  text-shadow: 0 0 20px red;
+}
+
+.king {
+  margin: 10px;
+  color: gold;
+  font-family: Cairo;
+  font-size: 25px;
+  text-shadow: 0 0 20px orange;
+}
+
+.divider {
+  width: 70%;
+  height: 2px;
+  margin: 15px auto;
+  background: linear-gradient(90deg, transparent, pink, gold, pink, transparent);
+  box-shadow: 0 0 15px pink;
+}
+
+.love-title {
+  font-family: Cairo;
+  color: pink;
+  font-size: 21px;
+}
+
+.awtar {
+  font-family: Cairo;
+  font-size: 55px;
+  color: #ff80b5;
+  text-shadow: 0 0 15px #ff1493, 0 0 40px red;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  50% { transform: scale(1.12); }
+}
+
+.message {
+  font-family: Cairo;
+  font-size: 16px;
+  line-height: 2;
+  color: #ffe1ec;
+  text-shadow: 0 0 10px #ff4b8c;
+}
+
+.message span {
+  color: #ff80b5;
+}
+
+.forever {
+  font-family: Orbitron;
+  font-size: 15px;
+  color: pink;
+  margin-top: 15px;
+  text-shadow: 0 0 20px hotpink;
+}
+
+/* قلوب */
+.love {
+  position: fixed;
+  bottom: -50px;
+  z-index: 2;
+  pointer-events: none;
+  animation: float 7s linear infinite;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* نجوم */
+.star {
+  position: fixed;
+  color: white;
+  z-index: 1;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  to {
+    opacity: .2;
+    transform: scale(1.7);
+    text-shadow: 0 0 20px pink;
+  }
+}
+
+/* شرارات النار */
+.spark {
+  position: fixed;
+  bottom: -10px;
+  width: 4px;
+  height: 4px;
+  background: orange;
+  border-radius: 50%;
+  box-shadow: 0 0 15px red;
+  animation: rise linear infinite;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) translateX(50px);
+    opacity: 0;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="content">
+
+  <div class="rose">🌹💗🌹</div>
+
+  <div class="intro">
+    في هذا العالم قلبي اختار إنسانة واحدة ❤️
+  </div>
+
+  <div class="crown">👑</div>
+
+  <h1>SHAYB</h1>
+
+  <div class="arabic">شايب</div>
+
+  <div class="king">🔥 ملك اللعبة 🔥</div>
+
+  <div class="divider"></div>
+
+  <div class="love-title">💍 أميرتي وأجمل أقداري 💍</div>
+
+  <div class="awtar">أوتار</div>
+
+  <div class="rose">🌹❤️🌹</div>
+
+  <div class="message">
+    من بين كل الناس قلبي اختارك أنتِ.<br>
+    يا أجمل صدفة وأحلى حكاية في عمري.<br>
+    <span>أنتِ نبض قلبي وابتسامتي وسعادتي.</span><br>
+    لو خُيّرت ألف مرة سأختارك ألف مرة ❤️
+  </div>
+
+  <div class="divider"></div>
+
+
+  <div class="forever">
+    SHAYB ❤️ AWTAR<br>
+    FOREVER & ALWAYS
+  </div>
+
+  <div class="rose">💞💍🌹</div>
+
+</div>
+
+<script>
+const emojis = ["❤️","💕","💗","💖","💘","🌹","💞","💓"];
+
+for (let i = 0; i < 50; i++) {
+  let item = document.createElement("div");
+  item.className = "love";
+  item.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+  item.style.left = Math.random()*100 + "vw";
+  item.style.fontSize = (15 + Math.random()*25) + "px";
+  item.style.animationDuration = (5 + Math.random()*7) + "s";
+  item.style.animationDelay = Math.random()*7 + "s";
+  document.body.appendChild(item);
+}
+
+for (let i = 0; i < 35; i++) {
+  let star = document.createElement("div");
+  star.className = "star";
+  star.innerHTML = "✦";
+  star.style.left = Math.random()*100 + "vw";
+  star.style.top = Math.random()*100 + "vh";
+  star.style.animationDelay = Math.random()*3 + "s";
+  document.body.appendChild(star);
+}
+
+for (let i = 0; i < 60; i++) {
+  let spark = document.createElement("div");
+  spark.className = "spark";
+  spark.style.left = Math.random()*100 + "vw";
+  spark.style.animationDuration = (2+Math.random()*5) + "s";
+  spark.style.animationDelay = Math.random()*5 + "s";
+  document.body.appendChild(spark);
+}
+</script>
+
+</body>
+</html>
