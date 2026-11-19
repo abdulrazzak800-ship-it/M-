@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBRA — Official</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 8%;
+    border-bottom: 1px solid #222;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 6px;
+}
+
+nav span {
+    color: #777;
+    letter-spacing: 3px;
+    font-size: 10px;
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 10%;
+    position: relative;
+}
+
+.intro {
+    color: #888;
+    letter-spacing: 6px;
+    font-size: 12px;
+    animation: fadeUp 1.5s ease;
+}
+
+h1 {
+    font-size: clamp(85px, 18vw, 190px);
+    letter-spacing: 12px;
+    margin: 25px 0;
+    animation: reveal 2s ease forwards;
+}
+
+h1 span {
+    color: #555;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(70px);
+        filter: blur(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.line {
+    width: 65px;
+    height: 2px;
+    background: white;
+    margin-bottom: 25px;
+}
+
+.quote {
+    color: #aaa;
+    font-size: 17px;
+    line-height: 2;
+}
+
+.animated-word {
+    color: white;
+    font-weight: bold;
+    border-right: 2px solid white;
+    padding-right: 5px;
+    animation: blink .7s infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.details {
+    display: flex;
+    gap: 70px;
+    margin-top: 65px;
+    flex-wrap: wrap;
+}
+
+.details h3 {
+    color: #555;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.details p {
+    font-size: 15px;
+}
+
+.section {
+    padding: 100px 10%;
+    background: #111;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 30px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.section p {
+    color: #888;
+    line-height: 2.2;
+}
+
+.words {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.words span {
+    border: 1px solid #333;
+    padding: 15px 25px;
+    color: #aaa;
+    transition: .4s;
+    animation: float 3s ease-in-out infinite;
+}
+
+.words span:nth-child(2) { animation-delay: .5s; }
+.words span:nth-child(3) { animation-delay: 1s; }
+
+.words span:hover {
+    color: white;
+    border-color: white;
+    transform: translateY(-8px);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    color: #555;
+    letter-spacing: 4px;
+    font-size: 10px;
+}
+
+/* Floating background lights */
+.light {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    opacity: .4;
+    pointer-events: none;
+    animation: sparkle 5s infinite;
+}
+
+@keyframes sparkle {
+    0% { transform: translateY(100vh); opacity: 0; }
+    50% { opacity: .5; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">IBRA.</div>
+    <span>UNIVERS PERSONNEL</span>
+</nav>
+
+<div class="hero">
+
+    <div class="intro">BIENVENUE DANS MON MONDE</div>
+
+    <h1>IBRA<span>.</span></h1>
+
+    <div class="line"></div>
+
+    <p class="quote">
+        « Le succès n'est pas un hasard.<br>
+        C'est le résultat de la <span class="animated-word" id="word"></span> »
+    </p>
+
+    <div class="details">
+        <div>
+            <h3>NOM</h3>
+            <p>Ibrahim</p>
+        </div>
+
+        <div>
+            <h3>PSEUDO</h3>
+            <p>IBRA</p>
+        </div>
+
+        <div>
+            <h3>OBJECTIF</h3>
+            <p>Viser plus haut.</p>
+        </div>
+    </div>
+
+</div>
+
+<section class="section">
+    <h2>MON ÉTAT D'ESPRIT.</h2>
+
+    <p>
+        Avancer sans regarder en arrière.<br>
+        Construire sans chercher l'approbation.<br>
+        Être différent, sans avoir à le prouver.
+    </p>
+
+    <div class="words">
+        <span>AMBITION</span>
+        <span>DISCIPLINE</span>
+        <span>RESPECT</span>
+    </div>
+</section>
+
+<footer>
+    IBRA © 2026 — FAIT POUR SE DÉMARQUER.
+</footer>
+
+<script>
+const words = [
+    "discipline.",
+    "patience.",
+    "détermination.",
+    "confiance.",
+    "ambition."
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+    const element = document.getElementById("word");
+    const current = words[wordIndex];
+
+    if (!deleting) {
+        element.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === current.length) {
+            deleting = true;
+            setTimeout(typeEffect, 1300);
+            return;
+        }
+    } else {
+        element.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+    }
+
+    setTimeout(typeEffect, deleting ? 60 : 110);
+}
+
+typeEffect();
+
+// Lumières animées
+for (let i = 0; i < 25; i++) {
+    const light = document.createElement("div");
+    light.className = "light";
+    light.style.left = Math.random() * 100 + "vw";
+    light.style.animationDelay = Math.random() * 5 + "s";
+    light.style.animationDuration = (4 + Math.random() * 5) + "s";
+    document.body.appendChild(light);
+}
+</script>
+
+</body>
+</html>
